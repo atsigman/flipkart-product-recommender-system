@@ -1,3 +1,10 @@
+"""
+Core app module.
+Routers for template rendering, I/O handling,
+and activity monitoring.
+"""
+
+
 from dotenv import load_dotenv
 
 from flask import Flask, render_template, request, Response
@@ -44,4 +51,4 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)

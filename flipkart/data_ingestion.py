@@ -1,3 +1,8 @@
+"""
+Class for loading and converting data,
+and embedding extraction/storage.
+"""
+
 from langchain_astradb import AstraDBVectorStore
 from langchain_huggingface import HuggingFaceEndpointEmbeddings
 

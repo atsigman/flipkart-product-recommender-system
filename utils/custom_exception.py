@@ -1,3 +1,8 @@
+"""
+Custom exception class
+for debugging purposes.
+"""
+
 import sys
 
 

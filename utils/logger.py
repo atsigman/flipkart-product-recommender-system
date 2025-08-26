@@ -1,3 +1,7 @@
+"""
+Custom logger formatting.
+"""
+
 import logging
 import os
 from datetime import datetime
