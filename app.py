@@ -30,7 +30,7 @@ def create_app():
         user_input = request.form["msg"]
         response = rag_chain.invoke(
             {"input": user_input},
-            config={"configurable": {"session_id": "user_session"}}
+            config={"configurable": {"session_id": "user_session"}},
         )["answer"]
 
         return response
@@ -45,4 +45,3 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     app.run(host="0.0.0.0", port=5001, debug=True)
-

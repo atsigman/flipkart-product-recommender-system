@@ -13,8 +13,9 @@ class DataConverter:
         df = pd.read_csv(self.file_path)[["product_title", "review"]]
 
         docs = [
-            Document(page_content=row["review"],
-                     metadata={"product_title": row["product_title"]}
+            Document(
+                page_content=row["review"],
+                metadata={"product_title": row["product_title"]},
             )
             for _, row in df.iterrows()
         ]

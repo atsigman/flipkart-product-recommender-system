@@ -9,16 +9,18 @@ class DataIngestor:
     def __init__(self) -> None:
         self.embedding = HuggingFaceEndpointEmbeddings(model=Config.EMBEDDING_MODEL)
         self.vectorstore = AstraDBVectorStore(
-                collection_name="flipkart_database",
-                embedding=self.embedding,
-                api_endpoint=Config.ASTRA_DB_API_ENDPOINT,
-                token=Config.ASTRA_DB_APPLICATION_TOKEN,
-                namespace=Config.ASTRA_DB_KEYSPACE,
+            collection_name="flipkart_database",
+            embedding=self.embedding,
+            api_endpoint=Config.ASTRA_DB_API_ENDPOINT,
+            token=Config.ASTRA_DB_APPLICATION_TOKEN,
+            namespace=Config.ASTRA_DB_KEYSPACE,
         )
 
-    def ingest(self,
-               csv_filepath: str = "data/flipkart_product_review.csv",
-               load_existing: bool = True) -> AstraDBVectorStore:
+    def ingest(
+        self,
+        csv_filepath: str = "data/flipkart_product_review.csv",
+        load_existing: bool = True,
+    ) -> AstraDBVectorStore:
         """
         Converts CSV data to Documents, embed, and save to AstraDB vectorstore.
         Returns the populated vectorstore.
