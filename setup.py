@@ -6,7 +6,7 @@ with open("requirements.txt") as f:
 setup(
     name="flipkart_recommender",
     version="0.1",
-    author="Sudhanshu",
+    author="Alex Sigman",
     packages=find_packages(),
     install_requires = requirements,
 )
